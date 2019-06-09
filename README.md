@@ -25,6 +25,8 @@ Check the tutorial...
 
 [_Build Your IoT Sensor Network — STM32 Blue Pill + nRF24L01 + ESP8266 + Apache Mynewt + thethings.io_](https://medium.com/@ly.lee/build-your-iot-sensor-network-stm32-blue-pill-nrf24l01-esp8266-apache-mynewt-thethings-io-ca7486523f5d)
 
+If you're looking for Mynewt with Rust support, [click here for the `rust` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust)
+
 # Contents
 
 This repository contains...
