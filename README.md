@@ -19,7 +19,7 @@
 #
 -->
 
-# Apache Mynewt Sensor Network Application for STM32 Blue Pill with ESP8266 and nRF24L01 (includes Geolocation)
+# Apache Mynewt Sensor Network Application for STM32 Blue Pill with Rust, ESP8266 and nRF24L01 (includes Geolocation)
 
 Check the tutorial...
 
