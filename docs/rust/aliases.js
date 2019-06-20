@@ -8,5 +8,7 @@ ALIASES["cty"] = {};
 ALIASES["generic_array"] = {};
 ALIASES["memchr"] = {};
 ALIASES["mylib"] = {};
+ALIASES["stable_deref_trait"] = {};
 ALIASES["typenum"] = {};
+ALIASES["vcell"] = {};
 ALIASES["volatile_register"] = {};

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="shortcut icon" href="../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../mylib/index.html'><img src='../../rust-logo.png' alt='logo' width='100'></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="shortcut icon" href="../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../mylib/index.html'><div class='logo-container'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
 <span id="2"> 2</span>
 <span id="3"> 3</span>
 <span id="4"> 4</span>
@@ -68,49 +68,69 @@
 <span id="68">68</span>
 <span id="69">69</span>
 <span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
+<span id="79">79</span>
+<span id="80">80</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="doccomment">//!  Sensor app that reads sensor data from a temperature sensor and sends the sensor data to a CoAP server or Collector Node.</span>
 <span class="doccomment">//!  Note that we are using a patched version of apps/my_sensor_app/src/vsscanf.c that</span>
 <span class="doccomment">//!  fixes ESP8266 response parsing bugs.  The patched file must be present in that location.</span>
 <span class="doccomment">//!  This is the Rust version of `https://github.com/lupyuen/stm32bluepill-mynewt-sensor/blob/rust/apps/my_sensor_app/OLDsrc/main.c`</span>
 
-<span class="attribute">#![<span class="ident">no_std</span>]</span>          <span class="comment">//  Don&#39;t link with standard Rust library, which is not compatible with embedded systems</span>
+<span class="attribute">#![<span class="ident">no_std</span>]</span>                   <span class="comment">//  Don&#39;t link with standard Rust library, which is not compatible with embedded systems</span>
+<span class="attribute">#![<span class="ident">feature</span>(<span class="ident">trace_macros</span>)]</span>    <span class="comment">//  Allow macro tracing: `trace_macros!(true)`</span>
+<span class="attribute">#![<span class="ident">feature</span>(<span class="ident">concat_idents</span>)]</span>   <span class="comment">//  Allow `concat_idents!()` macro used in `coap!()` macro</span>
+<span class="attribute">#![<span class="ident">feature</span>(<span class="ident">const_transmute</span>)]</span> <span class="comment">//  Allow `transmute` for initialising Mynewt structs</span>
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">cortex_m</span>;       <span class="comment">//  Declare the external library `cortex_m`</span>
 
-<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">cortex_m</span>;  <span class="comment">//  Declare the external library cortex_m</span>
+<span class="attribute">#[<span class="ident">allow</span>(<span class="ident">dead_code</span>)]</span> <span class="comment">//  Suppress warnings of unused constants and vars</span>
+<span class="attribute">#[<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>)]</span>    <span class="comment">//  Allow type names to have non-camel case</span>
+<span class="attribute">#[<span class="ident">allow</span>(<span class="ident">non_upper_case_globals</span>)]</span>  <span class="comment">//  Allow globals to have lowercase letters</span>
+<span class="attribute">#[<span class="ident">macro_use</span>]</span>        <span class="comment">//  Allow macros from Rust module `mynewt`</span>
+<span class="kw">mod</span> <span class="ident">mynewt</span>;         <span class="comment">//  Declare `mynewt/mod.rs` as Rust module `mynewt`</span>
 
-<span class="kw">mod</span> <span class="ident">base</span>;           <span class="comment">//  Declare base.rs as Rust module `base`</span>
-<span class="kw">mod</span> <span class="ident">sensor</span>;         <span class="comment">//  Declare sensor.rs as Rust module `sensor`</span>
-<span class="kw">mod</span> <span class="ident">listen_sensor</span>;  <span class="comment">//  Declare listen_sensor.rs as Rust module `listen_sensor`</span>
-<span class="kw">mod</span> <span class="ident">send_coap</span>;      <span class="comment">//  Declare send_coap.rs as Rust module `send_coap`</span>
+<span class="attribute">#[<span class="ident">allow</span>(<span class="ident">dead_code</span>)]</span> <span class="comment">//  Suppress warnings of unused constants and vars</span>
+<span class="kw">mod</span> <span class="ident">base</span>;           <span class="comment">//  Declare `base.rs` as Rust module `base`</span>
 
-<span class="kw">use</span> <span class="ident">core</span>::<span class="ident">panic</span>::<span class="ident">PanicInfo</span>;     <span class="comment">//  Import the PanicInfo type which is used by panic() below</span>
-<span class="kw">use</span> <span class="ident">cortex_m</span>::<span class="ident">asm</span>::<span class="ident">bkpt</span>;        <span class="comment">//  Import the cortex_m assembly function to inject breakpoint</span>
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">base</span>::<span class="kw-2">*</span>;             <span class="comment">//  Import base.rs for common declarations</span>
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">listen_sensor</span>::<span class="kw-2">*</span>;    <span class="comment">//  Import listen_sensor.rs for polling the temperature sensor</span>
-<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">send_coap</span>::<span class="kw-2">*</span>;        <span class="comment">//  Import send_coap.rs for sending sensor data</span>
+<span class="kw">mod</span> <span class="ident">listen_sensor</span>;  <span class="comment">//  Declare `listen_sensor.rs` as Rust module `listen_sensor`</span>
+<span class="kw">mod</span> <span class="ident">send_coap</span>;      <span class="comment">//  Declare `send_coap.rs` as Rust module `send_coap`</span>
+
+<span class="kw">use</span> <span class="ident">core</span>::<span class="ident">panic</span>::<span class="ident">PanicInfo</span>;     <span class="comment">//  Import `PanicInfo` type which is used by `panic()` below</span>
+<span class="kw">use</span> <span class="ident">cortex_m</span>::<span class="ident">asm</span>::<span class="ident">bkpt</span>;        <span class="comment">//  Import cortex_m assembly function to inject breakpoint</span>
+<span class="kw">use</span> <span class="ident">mynewt</span>::<span class="ident">kernel</span>::<span class="ident">os</span>;         <span class="comment">//  Import Mynewt OS API</span>
+<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">base</span>::<span class="kw-2">*</span>;             <span class="comment">//  Import `base.rs` for common declarations</span>
 
 <span class="doccomment">///  main() will be called at Mynewt startup. It replaces the C version of the main() function.</span>
 <span class="attribute">#[<span class="ident">no_mangle</span>]</span>                     <span class="comment">//  Don&#39;t mangle the name &quot;main&quot;</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">main</span>() <span class="op">-&gt;</span> <span class="op">!</span> {  <span class="comment">//  Declare extern &quot;C&quot; because it will be called by Mynewt</span>
     <span class="comment">//  Init Mynewt system.</span>
-    <span class="kw">unsafe</span> { <span class="ident">rust_sysinit</span>()  };
+    <span class="kw">unsafe</span> { <span class="ident">base</span>::<span class="ident">rust_sysinit</span>()  };
     <span class="kw">unsafe</span> { <span class="ident">console_flush</span>() };
 
     <span class="comment">//  Start the Network Task in the background.  The Network Task prepares the ESP8266 or nRF24L01 transceiver for</span>
     <span class="comment">//  sending CoAP messages.  We connect the ESP8266 to the WiFi access point and register</span>
     <span class="comment">//  the ESP8266/nRF24L01 driver as the network transport for CoAP.  Also perform WiFi Geolocation if it is enabled.</span>
-    <span class="kw">let</span> <span class="ident">rc</span> <span class="op">=</span> <span class="ident">start_network_task</span>();  <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">rc</span> <span class="op">==</span> <span class="number">0</span>);
+    <span class="ident">send_coap</span>::<span class="ident">start_network_task</span>()
+        .<span class="ident">expect</span>(<span class="string">&quot;NET fail&quot;</span>);
 
     <span class="comment">//  Starting polling the temperature sensor every 10 seconds in the background.  </span>
     <span class="comment">//  After polling the sensor, call the listener function to send the sensor data to the CoAP server or Collector Node.</span>
     <span class="comment">//  If this is the Collector Node, we shall wait for sensor data from the Sensor Nodes and transmit to the CoAP server.</span>
-    <span class="kw">let</span> <span class="ident">rc</span> <span class="op">=</span> <span class="ident">start_sensor_listener</span>();  <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">rc</span> <span class="op">==</span> <span class="number">0</span>);
+    <span class="ident">listen_sensor</span>::<span class="ident">start_sensor_listener</span>()
+        .<span class="ident">expect</span>(<span class="string">&quot;TMP fail&quot;</span>);
 
     <span class="comment">//  Main event loop</span>
     <span class="kw">loop</span> {                            <span class="comment">//  Loop forever...</span>
         <span class="kw">unsafe</span> {
-            <span class="ident">os_eventq_run</span>(            <span class="comment">//  Process events...</span>
-                <span class="ident">os_eventq_dflt_get</span>()  <span class="comment">//  From default event queue.</span>
+            <span class="ident">os</span>::<span class="ident">os_eventq_run</span>(            <span class="comment">//  Process events...</span>
+                <span class="ident">os</span>::<span class="ident">os_eventq_dflt_get</span>()  <span class="comment">//  From default event queue.</span>
             )
         }
     }
