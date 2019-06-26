@@ -106,7 +106,7 @@ _(Rust on Windows is needed to support the Rust RLS extension for Visual Studio 
 
 1.  Open the Windows Command Prompt (not Windows Ubuntu).  Enter into the command prompt:
     ```
-    rustup override set nightly
+    rustup default nightly
     rustup update
     rustc -V
     ```
@@ -160,7 +160,7 @@ _(Rust on Windows Subsystem for Linux is needed for building Rust and Mynewt pro
 
 1.  Enter into the Windows Ubuntu command prompt (not Windows Command Prompt):
     ```
-    rustup override set nightly
+    rustup default nightly
     rustup update
     rustc -V
     ```
@@ -205,7 +205,7 @@ _(Rust on Windows Subsystem for Linux is needed for building Rust and Mynewt pro
 
 1.  Enter into the command prompt:
     ```bash
-    rustup override set nightly
+    rustup default nightly
     rustup update
     rustc -V
     ```
