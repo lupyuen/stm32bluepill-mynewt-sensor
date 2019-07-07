@@ -27,6 +27,8 @@ Check the tutorial...
 
 If you're looking for Mynewt with Rust support, [click here for the `rust` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust)
 
+If you're looking for Mynewt with Rust Macros and Safe Wrappers, [click here for the `rust-safe` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-safe)
+
 # Contents
 
 This repository contains...
