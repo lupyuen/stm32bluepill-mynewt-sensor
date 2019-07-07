@@ -27,6 +27,8 @@ Check the article...
 
 [_Hosting Embedded Rust apps on Apache Mynewt with STM32 Blue Pill_](https://medium.com/@ly.lee/hosting-embedded-rust-apps-on-apache-mynewt-with-stm32-blue-pill-c86b119fe5f?source=friends_link&sk=f58f4cf6c608fded4b354063e474a93b)
 
+If you're looking for Mynewt with Rust Macros and Safe Wrappers, [click here for the `rust-safe` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-safe)
+
 # Requirements
 
 1. [STM32 Blue Pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill) or [Super Blue Pill](https://medium.com/swlh/super-blue-pill-like-stm32-blue-pill-but-better-6d341d9347da)
