@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["json","Contains Rust bindings for Mynewt JSON Encoding API `encoding/json`"],["tinycbor","Contains Rust bindings for Mynewt TinyCBOR Encoding API `encoding/tinycbor`"]]});
