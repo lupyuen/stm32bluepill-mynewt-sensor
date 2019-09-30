@@ -23,7 +23,7 @@
 
 If you're looking for...
 
-- Nordic nRF52 version with Rust, [click here for the `nrf52` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/nrf52)
+- Nordic nRF52 version with iBeacon, NimBLE and Rust, [click here for the `nrf52` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/nrf52)
 
 - STM32 L476 version with GPS, NB-IoT and Rust, [click here for the `l476` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/l476)
 
