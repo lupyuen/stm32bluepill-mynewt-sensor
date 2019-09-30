@@ -29,7 +29,7 @@ If you're looking for...
 
 - STM32 Blue Pill version with Low-Power NB-IoT, [click here for the `low-power` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/low-power)
 
-- STM32 Blue Pill version with NB-IoT and Visual Rust, [click here for the `visual-rust` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/visual-rust)
+- STM32 Blue Pill version with NB-IoT and Visual Rust, [click here for the `rust-nbiot` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-nbiot)
 
 - STM32 Blue Pill version with NB-IoT and Rust, [click here for the `rust-nbiot` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-nbiot)
 
