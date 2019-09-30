@@ -21,17 +21,27 @@
 
 # Apache Mynewt Sensor Network Application for STM32 Blue Pill with Rust, ESP8266 and nRF24L01 (includes Geolocation)
 
-Check the tutorial...
+If you're looking for...
+
+- Nordic nRF52 version with Rust, [click here for the `nrf52` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/nrf52)
+
+- STM32 L476 version with GPS, NB-IoT and Rust, [click here for the `l476` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/l476)
+
+- STM32 Blue Pill version with Low-Power NB-IoT, [click here for the `low-power` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/low-power)
+
+- STM32 Blue Pill version with NB-IoT and Visual Rust, [click here for the `visual-rust` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/visual-rust)
+
+- STM32 Blue Pill version with NB-IoT and Rust, [click here for the `rust-nbiot` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-nbiot)
+
+- STM32 Blue Pill version with NB-IoT and C, [click here for the `nbiot` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/nbiot)
+
+- STM32 Blue Pill version with Rust, [click here for the `rust` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust)
+
+- STM32 Blue Pill version with Rust Macros and Safe Wrappers, [click here for the `rust-safe` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-safe)
+
+You are now at the older branch for STM32 Blue Pill with nRF24L01 and ESP8266. Check the tutorial...
 
 [_Build Your IoT Sensor Network — STM32 Blue Pill + nRF24L01 + ESP8266 + Apache Mynewt + thethings.io_](https://medium.com/@ly.lee/build-your-iot-sensor-network-stm32-blue-pill-nrf24l01-esp8266-apache-mynewt-thethings-io-ca7486523f5d)
-
-If you're looking for the NB-IoT version built with Rust, [click here for the `rust-nbiot` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-nbiot)
-
-If you're looking for the NB-IoT version built with C, [click here for the `nbiot` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/nbiot)
-
-If you're looking for Mynewt with Rust support, [click here for the `rust` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust)
-
-If you're looking for Mynewt with Rust Macros and Safe Wrappers, [click here for the `rust-safe` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/rust-safe)
 
 # Contents
 
