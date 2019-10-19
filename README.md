@@ -23,6 +23,8 @@
 
 If you're looking for...
 
+- GigaDevice GD32VF103 version with Rust, [click here for the `gd32vf103` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/gd32vf103)
+
 - Nordic nRF52 version with Bluetooth Mesh, [click here for the `mesh` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/mesh)
 
 - Nordic nRF52 version with iBeacon, NimBLE and Rust, [click here for the `nrf52` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/nrf52)
