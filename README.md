@@ -23,6 +23,8 @@
 
 If you're looking for...
 
+- Pine64 PineTime Smart Watch version with Rust, [click here for the `pinetime` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/pinetime)
+
 - GigaDevice GD32VF103 version with Rust, [click here for the `gd32vf103` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/gd32vf103)
 
 - Nordic nRF52 version with Bluetooth Mesh, [click here for the `mesh` branch](https://github.com/lupyuen/stm32bluepill-mynewt-sensor/tree/mesh)
