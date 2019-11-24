@@ -31,7 +31,7 @@ This `gd32vf103` branch contains the source code for a Sensor Application for Gi
 
 1. Patch `patch/cty.rs` to Rust `cty` crate
 
-1. Patch `patch//os_arch_rv32imac.c` to `repos/apache-mynewt-core/kernel/os/src/arch/rv32imac/os_arch_rv32imac.c`
+1. Patch `patch/os_arch_rv32imac.c` to `repos/apache-mynewt-core/kernel/os/src/arch/rv32imac/os_arch_rv32imac.c`
 
 # Fixes for Mynewt type conversion build warnings
 
