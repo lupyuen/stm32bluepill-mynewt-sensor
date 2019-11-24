@@ -27,11 +27,11 @@ This `gd32vf103` branch contains the source code for a Sensor Application for Gi
 
 1. [_Hey GD32 VF103 on RISC-V: I surrender… For now_](https://medium.com/@ly.lee/hey-gd32-vf103-on-risc-v-i-surrender-for-now-d39d0c7b0001?source=friends_link&sk=c0504ac574bf571219fabe174eef4de5)
 
-# TODO
+# Patches
 
-repos/apache-mynewt-core/kernel/os/src/arch/rv32imac/ctx.s
+1. Patch `patch/cty.rs` to Rust `cty` crate
 
-repos/apache-mynewt-core/kernel/os/src/arch/rv32imac/os_arch_rv32imac.c
+1. Patch `patch//os_arch_rv32imac.c` to `repos/apache-mynewt-core/kernel/os/src/arch/rv32imac/os_arch_rv32imac.c`
 
 # Fixes for Mynewt type conversion build warnings
 
