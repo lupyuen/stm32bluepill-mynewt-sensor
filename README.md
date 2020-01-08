@@ -21,6 +21,8 @@
 
 # PineTime Smart Watch Firmware with Apache Mynewt and Embedded Rust
 
+## Note: PineTime code has been moved here: https://github.com/lupyuen/pinetime-rust-mynewt
+
 This `pinetime` branch contains the firmware source code for PineTime Smart Watch with Apache Mynewt and Embedded Rust. Refer to the articles...
 
 1. [_Sneak Peek of PineTime Smart Watch… And why it's perfect for teaching IoT_](https://medium.com/swlh/sneak-peek-of-pinetime-smart-watch-and-why-its-perfect-for-teaching-iot-81b74161c159?source=friends_link&sk=d9301466f5499bece3e7b638e99ec20d)
